@@ -13,10 +13,11 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-passport.serializeUser((user,done) => {
-    done(null,user);
+passport.serializeUser((user, done) => {
+  console.log(user);
+  done(null, user.id);
 });
-  
-  passport.deserializeUser((user,done) => {
-    done(null,user)
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
 });
